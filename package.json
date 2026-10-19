@@ -7,9 +7,9 @@
   "scripts": {
     "serve": "python3 -m http.server 8000",
     "validate": "node tools/validar-niveles.mjs",
-    "test": "node --test tests/",
+    "test": "node --test tests/*.test.mjs",
     "build:web": "node tools/build-web.mjs",
-    "check": "node tools/validar-niveles.mjs && node --test tests/"
+    "check": "node tools/validar-niveles.mjs && node --test tests/*.test.mjs"
   },
   "engines": { "node": ">=20" }
 }

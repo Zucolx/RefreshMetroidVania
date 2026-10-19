@@ -1,0 +1,42 @@
+LABORATORIO DE MECÁNICAS METROIDVANIA — resumen de mecánicas
+============================================================
+
+UNIDADES: 1 tile = 32 px · px/s · segundos · paso fijo 60 Hz · gravedad 2400 · caída máx. 1100
+
+MOVIMIENTO
+  Salto (≈120 px) · doble salto (+102 px) · salto alto (mantener ↑+salto ~1 s: ≈5,9 / 11 tiles)
+  Dash (≈162 px) · sprint (×1,35; con Viento hasta 3 cargas) · dash a velocidad máxima
+  Modos de carrera: patín, cohete, estela, hilos.
+
+PERSONAJES (equipo de 3, relevo con 1/2, entradas heroicas)
+  Espadachín  100 HP  combo ×3, media luna, parry, pogo, Escudo estelar
+  Maga         85 HP  chispas, mariposas, corriente de aire, planeo, ráfaga, Hada benigna
+  Artificiero 110 HP  cadena, escopeta, bombas, Gancho
+  Alquimista   90 HP  frascos, ácido, frasco inestable, Transmutación
+  Titiritero   95 HP  títere con espada, látigo giratorio, picado, Cambio de hilos
+  Relojero     85 HP  llave con eco temporal, burbuja de tiempo, aguja, Marca y retroceso
+
+MAGIA Y MANÁ
+  Magia común con maná compartido. ↓+MAGIA escudo · ↑+MAGIA explosión.
+
+IDLES Y MEDITACIÓN
+  Dos idles por personaje: idle_base e idle_flavor (acción propia tras CONFIG.idle.flavorWait).
+  Meditación tras 3 s quieto: +3 maná/s y +10 HP/s; se detiene sola con HP y maná llenos.
+  Desactivable con CONFIG.meditationEnabled (panel del lab).
+
+AMULETOS (uno por bioma)
+  Agua (Bosque)   proyectil cargado ×1,6, ×1,25 vs. fuego, petrifica gólems
+  Fuego (Volcán)  la explosión lanza 3 bolas de fuego que persiguen
+  Tierra (Valle)  caída con daño y onda al aterrizar, escudo +2 s
+  Viento (Castillo) dash ×1,25, +1 dash aéreo, sprint con cargas
+  Hilos (Teatro)  hilo 2 s tras golpear: +40 % daño y +0,5 maná
+
+ENEMIGOS (20): patrol, chaser, shooter, spider, spiderling, treant, whitefairy, lizard, golem, hyena,
+  wolf, blackfairy, orc, bat, ghost, armor, marionette, shadow, mask, clown
+PELIGROS DEL TEATRO: trampillas, telones, focos, cuerdas, noria
+
+NIVELES: Laboratorio (requiere salto alto y dash), Bosque, Volcán, Valle, Castillo, Teatro
+  Reglas validadas: escalones ≤3 tiles · escaleras de plataformas cada 3 · sin zonas trampa · puntos clave en suelo firme.
+
+HERRAMIENTAS: Tab = panel del lab (sliders, toggles, teletransporte, render Formas/Sprites/Mixto, recarga de atlas)
+  Editor de niveles con prueba inmediata · node tools/validar-niveles.mjs [nivel]

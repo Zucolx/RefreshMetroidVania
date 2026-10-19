@@ -1,0 +1,19 @@
+{
+  "name": "laboratorio-metroidvania-steam",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "description": "Envoltorio Electron del laboratorio Metroidvania para Steam",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^25.0.0" },
+  "optionalDependencies": { "steamworks.js": "^0.4.0" },
+  "build": {
+    "appId": "com.laboratorio.metroidvania",
+    "productName": "Laboratorio Metroidvania",
+    "files": ["main.js", "preload.js", "game/**/*"],
+    "directories": { "output": "release" }
+  }
+}

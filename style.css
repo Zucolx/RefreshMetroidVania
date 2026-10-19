@@ -42,7 +42,8 @@ button.on { border-color: var(--ok); background: #1f3a2c; }
 .card.ko { opacity: .5; }
 .tabs { display: flex; gap: 6px; margin-bottom: 10px; }
 .tabs button.active { border-color: var(--accent); background: #2a3260; color: var(--accent); }
-.scroll { overflow-y: auto; max-height: 340px; width: 100%; padding-right: 6px; }
+.scroll { overflow-y: auto; max-height: 340px; width: 100%; padding-right: 6px; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
+#lab, #editor .side { touch-action: pan-y; }
 .scroll::-webkit-scrollbar { width: 8px; } .scroll::-webkit-scrollbar-thumb { background: #3a4574; border-radius: 4px; }
 .footer { margin-top: 12px; color: var(--dim); font-size: 11px; text-align: center; }
 .kbd { display: inline-block; min-width: 22px; padding: 1px 6px; border: 1px solid #55608f; border-bottom-width: 3px; border-radius: 5px; background: #1b2142; font-size: 11px; text-align: center; margin: 0 2px; }

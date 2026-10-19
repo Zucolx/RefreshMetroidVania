@@ -13,7 +13,7 @@ export function controlsScreen(menus) {
   let listening = null; // {action, slot}
   let raf = 0;
 
-  const body = h('div', { class: 'scroll', style: { maxWidth: '620px', minHeight: '300px' } });
+  const body = h('div', { class: 'scroll', style: { maxWidth: '640px', maxHeight: '330px' } });
   const tabs = h('div', { class: 'tabs' });
   const el = h('div', { class: 'screen solid' },
     h('h2', null, 'Controles'),

@@ -116,6 +116,7 @@ class App {
     this.touch.releaseAll();
     this.state = 'play';
     this.acc = 0;
+    if (this.lab.visible) this.lab.refreshTp();
   }
   restart() {
     if (!this.currentWorldJSON) return;

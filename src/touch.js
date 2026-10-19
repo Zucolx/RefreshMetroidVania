@@ -14,11 +14,11 @@ const BUTTONS = [
   { id: 'special', label: 'ESPECIAL', x: 660, y: 452, r: 40, acts: ['special'], color: '#8dffb0' },
   { id: 'shield', label: 'ESCUDO', x: 666, y: 360, r: 30, acts: ['down', 'magic'], color: '#9fb6ff' },
   { id: 'burst', label: 'EXPLOSIÓN', x: 776, y: 270, r: 30, acts: ['up', 'magic'], color: '#ff9fd0' },
-  { id: 'swap', label: '⇄ CAMBIO', x: 590, y: 500, r: 26, acts: ['next'], color: '#ffffff', small: true },
-  { id: 'inv', label: '🎒', x: 828, y: 36, r: 22, acts: ['inventory'], color: '#ffffff', small: true },
-  { id: 'lab', label: '🧪', x: 776, y: 36, r: 22, acts: ['lab'], color: '#ffffff', small: true },
-  { id: 'full', label: '⛶', x: 724, y: 36, r: 22, acts: [], color: '#ffffff', small: true, action: 'fullscreen' },
-  { id: 'pause', label: '⏸', x: 924, y: 36, r: 22, acts: ['pause'], color: '#ffffff', small: true },
+  { id: 'swap', label: '⇄ CAMBIO', x: 586, y: 494, r: 34, acts: ['next'], color: '#ffffff', small: true, fs: 11 },
+  { id: 'inv', label: '🎒', x: 872, y: 92, r: 22, acts: ['inventory'], color: '#ffffff', small: true },
+  { id: 'lab', label: '🧪', x: 820, y: 92, r: 22, acts: ['lab'], color: '#ffffff', small: true },
+  { id: 'full', label: '⛶', x: 768, y: 92, r: 22, acts: [], color: '#ffffff', small: true, action: 'fullscreen' },
+  { id: 'pause', label: '⏸', x: 924, y: 92, r: 22, acts: ['pause'], color: '#ffffff', small: true },
 ];
 
 export class TouchControls {
@@ -183,7 +183,7 @@ export class TouchControls {
       ctx.fill();
       ctx.lineWidth = 3; ctx.strokeStyle = b.color; ctx.stroke();
       ctx.fillStyle = b.pressed ? '#0a0d18' : b.color;
-      ctx.font = `bold ${b.small ? 15 : Math.max(10, Math.round(r / 4.2))}px system-ui, sans-serif`;
+      ctx.font = `bold ${b.small ? (b.fs || 15) : Math.max(10, Math.round(r / 4.2))}px system-ui, sans-serif`;
       ctx.fillText(b.label, x, y);
     }
     if (active) {

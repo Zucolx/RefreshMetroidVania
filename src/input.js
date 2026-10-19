@@ -2,6 +2,7 @@
 // El juego consume los bordes (pulsado/soltado) una vez por paso fijo con beginStep().
 import { ACTIONS, controls } from './controls.js';
 import { platform } from './platform.js';
+import { Store } from './storage.js';
 
 const AXIS_THRESHOLD = 0.4;
 const PREVENT = new Set(['Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab']);
@@ -158,6 +159,7 @@ export class Input {
     this.pressedAcc = {}; this.releasedAcc = {};
   }
   rumble(ms = 80, s = 0.6, w = 0.4) {
+    if (Store.data.settings.vibration === false) return;
     if (controls.device === 'gamepad') {
       for (const p of this.rawPads) platform.vibrate(p, ms, s, w);
     } else if (controls.device === 'touch') platform.vibrate(null, ms);

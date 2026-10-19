@@ -36,12 +36,6 @@ export class SpriteSystem {
       const r = await fetch(this.base + 'index.json', { cache: 'no-store' });
       if (r.ok) { const j = await r.json(); files = j.atlases || j; }
     } catch (e) { /* sin índice */ }
-    if (!files.length) {
-      try {
-        const r = await fetch(this.base + 'atlas.json', { cache: 'no-store' });
-        if (r.ok) files = ['atlas.json'];
-      } catch (e) { /* sin atlas */ }
-    }
     for (const f of files) {
       try { await this.loadAtlas(f); } catch (e) { console.warn('Atlas no válido', f, e); }
     }
