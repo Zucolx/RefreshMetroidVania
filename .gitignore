@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+platforms/android/android/
+platforms/android/node_modules/
+platforms/steam/node_modules/
+platforms/steam/out/
+platforms/steam/dist/

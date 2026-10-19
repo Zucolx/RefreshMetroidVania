@@ -1,0 +1,15 @@
+{
+  "name": "laboratorio-mecanicas-metroidvania",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Banco de pruebas jugable (HTML5 Canvas 2D + ES modules) para prototipar mecánicas de Metroidvania. Web, Android (Capacitor) y Steam (Electron).",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "validate": "node tools/validar-niveles.mjs",
+    "test": "node --test tests/",
+    "build:web": "node tools/build-web.mjs",
+    "check": "node tools/validar-niveles.mjs && node --test tests/"
+  },
+  "engines": { "node": ">=20" }
+}
